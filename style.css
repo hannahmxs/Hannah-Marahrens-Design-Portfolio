@@ -140,8 +140,8 @@ nav.main-nav a.active { color: #ffffff; font-weight: 600; }
   margin: 0 0 1.3rem;
 }
 .about-photo {
-  flex: 0 0 400px;
-  width: 400px;
+  flex: 0 0 350px;
+  width: 350px;
   aspect-ratio: 19.75 / 27.5;
   overflow: hidden;
   background: transparent;
