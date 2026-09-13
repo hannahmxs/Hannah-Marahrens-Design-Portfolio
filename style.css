@@ -1,356 +1,192 @@
-:root {
-  --dark: #1c1c1c;
-  --ink: #222222;
-  --muted: #8f8f8f;
-  --pink: #f5d8da;
-  --footer-gray: #efefef;
-  --tile-venedig: #d6d6d6;
-  --tile-vogelball: #2b2b2b;
-  --tile-herofuel: #8478b0;
-  --tile-shape: #33443a;
-  --tile-acryl: #e6e6e6;
-  --tile-skizzen: #f2f2f2;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
-  color: var(--ink);
-  background: #ffffff;
-  line-height: 1.6;
-  font-size: 17px;
-}
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
-h1, h2, h3 {
-  font-family: "Quicksand", -apple-system, sans-serif;
-  font-weight: 400;
-  margin: 0;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Marahrens – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
+<header class="hero" id="start">
+  <div class="wrap">
+    <h1>Hannah Marahrens</h1>
+    <nav class="main-nav">
+      <a href="#about">Über mich</a>
+      <a href="#portfolio" class="active">Portfolio</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-/* ---------- HEADER / HERO ---------- */
-header.hero {
-  background: var(--dark);
-  padding: 3rem 0 1.5rem;
-  text-align: center;
-}
-header.hero h1 {
-  color: #ffffff;
-  font-size: clamp(1.8rem, 3.4vw, 2.5rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.9rem;
-}
-header.hero h1 a { color: #ffffff; }
-nav.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2.2rem;
-}
-nav.main-nav a {
-  font-family: "Quicksand", sans-serif;
-  font-size: 0.92rem;
-  color: var(--muted);
-  font-weight: 500;
-  padding-bottom: 0.3rem;
-  transition: color 0.2s ease;
-}
-nav.main-nav a:hover { color: #ffffff; }
-nav.main-nav a.active { color: #ffffff; font-weight: 600; }
+<section id="portfolio" class="portfolio-section">
+  <div class="wrap">
+  <div class="portfolio-grid">
+    <a class="tile tile-venedig" href="projects/venedig.html">
+      <img src="bilder/venedig.jpg" alt="Venedig 22 – Schattenspiele">
+      <div class="tile-overlay"><span>Venedig 22 – Schattenspiele</span></div>
+    </a>
 
-/* ---------- PORTFOLIO GRID ---------- */
-.portfolio-section { padding: 4.5rem 0 2.5rem; }
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-  max-width: 980px;
-  margin: 0 auto;
-}
-.tile {
-  position: relative;
-  aspect-ratio: 16 / 11;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tile img { width: 100%; height: 100%; object-fit: cover; }
-.tile-venedig { background: var(--tile-venedig); }
-.tile-herofuel { background: var(--tile-herofuel); }
-.tile-shape { background: var(--tile-shape); }
-.tile-acryl { background: var(--tile-acryl); }
-.tile-skizzen { background: var(--tile-skizzen); }
+    <a class="tile tile-vogelball" href="projects/vogelball.html">
+      <img src="bilder/vogelball.jpg" alt="Vogelball Rebranding">
+      <div class="tile-overlay"><span>Vogelball Rebranding</span></div>
+    </a>
 
-.tile-vogelball {
-  background: var(--tile-vogelball);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  padding: 2rem;
-}
-.tile-vogelball img {
-  width: 32%;
-  height: 82%;
-  object-fit: cover;
-}
+    <a class="tile tile-herofuel" href="projects/hero-fuel.html">
+      <img src="bilder/hero-fuel.jpg" alt="Teemarke Hero Fuel">
+      <div class="tile-overlay"><span>Teemarke Hero Fuel</span></div>
+    </a>
 
-.tile-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.35s ease;
-  pointer-events: none;
-}
-.tile-overlay span {
-  font-family: "Quicksand", sans-serif;
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  text-align: center;
-  padding: 0 1.5rem;
-}
-.tile:hover .tile-overlay { background: rgba(0,0,0,0.55); }
-.tile:hover .tile-overlay span { opacity: 1; transform: translateY(0); }
+    <a class="tile tile-shape" href="projects/shape-of-my-heart.html">
+      <img src="bilder/shape-of-my-heart.jpg" alt="Shape of my Heart">
+      <div class="tile-overlay"><span>Shape of my Heart</span></div>
+    </a>
 
-/* ---------- ABOUT ---------- */
-.about-section { padding: 5.5rem 0 3rem; }
-.about-split {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 2rem;
-  align-items: center;
-  padding-bottom: 3rem;
-}
-.about-text { padding-left: 1.5rem; }
-.about-text h2 {
-  font-size: 2.3rem;
-  margin-bottom: 1.4rem;
-}
-.about-text p {
-  font-size: 1.05rem;
-  color: var(--ink);
-  max-width: 480px;
-  margin: 0 0 1.3rem;
-}
-.about-photo {
-  width: 380px;
-  aspect-ratio: 3 / 3.7;
-  overflow: hidden;
-  background: #eee;
-}
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    <a class="tile tile-acryl" href="projects/acryl.html">
+      <img src="bilder/acryl.jpg" alt="Acryl Malerei">
+      <div class="tile-overlay"><span>Acryl Malerei</span></div>
+    </a>
 
-/* ---------- SKILL BADGES ---------- */
-.badges {
-  display: flex;
-  justify-content: center;
-  gap: 2.2rem;
-  padding: 3.5rem 0 3.5rem;
-  flex-wrap: wrap;
-}
-.badge {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
-  background: var(--dark);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1.2rem;
-}
-.badge svg { width: 26px; height: 26px; margin-bottom: 0.7rem; }
-.badge h3 {
-  font-family: "Quicksand", sans-serif;
-  font-size: 0.98rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-.badge p {
-  font-size: 0.85rem;
-  color: #dcdcdc;
-  margin: 0;
-  max-width: 150px;
-}
+    <a class="tile tile-skizzen" href="projects/skizzen.html">
+      <img src="bilder/skizzen.jpg" alt="Skizzenbuch">
+      <div class="tile-overlay"><span>Skizzenbuch</span></div>
+    </a>
+  </div>
+  </div>
+</section>
 
-/* ---------- CONTACT BAR ---------- */
-.contact-bar {
-  background: var(--pink);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-.contact-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-align: center;
-  padding: 2.2rem 1rem;
-  border-right: 1px solid rgba(0,0,0,0.15);
-}
-.contact-col:last-child { border-right: none; }
-.contact-col svg { display: block; width: 26px; height: 26px; }
-.contact-col span { font-size: 1.02rem; line-height: 1; }
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-split">
+      <div class="about-text">
+        <h2>Über mich</h2>
+        <p>Moin, ich ich bin Hannah.<br>
+        Kommunikationsdesign-Studentin an der HAW Hamburg. Hier findest du eine Übersicht meiner studentischen Projekte und freien Arbeiten.</p>
+        <p>Viel Spaß beim Entdecken!</p>
+      </div>
+      <div class="about-photo">
+        <img src="bilder/portrait.jpg" alt="Hannah Marahrens">
+      </div>
+    </div>
 
-/* ---------- FOOTER ---------- */
-footer {
-  background: var(--footer-gray);
-  padding: 1.6rem 0 1.3rem;
-  text-align: center;
-}
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: 0.7rem;
-  margin-bottom: 0.9rem;
-}
-.footer-social a {
-  width: 30px;
-  height: 30px;
-  background: var(--dark);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-social svg { width: 14px; height: 14px; fill: #ffffff; }
-.footer-legal {
-  display: flex;
-  justify-content: center;
-  gap: 1.4rem;
-  margin-bottom: 0.7rem;
-  font-size: 0.75rem;
-}
-.footer-legal button {
-  background: none;
-  border: none;
-  font: inherit;
-  color: var(--ink);
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-}
-.footer-copy {
-  font-size: 0.8rem;
-  color: var(--ink);
-  margin: 0;
-}
+    <div class="badges">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="1"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg>
+        <h3>Design &amp; Layout</h3>
+        <p>InDesign, Illustrator, Figma</p>
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5.5-5.5L3 20"/></svg>
+        <h3>Bildbearbeitung</h3>
+        <p>Photoshop, Lightroom</p>
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5"><circle cx="9" cy="9" r="3"/><circle cx="16" cy="9" r="2"/><rect x="3" y="14" width="14" height="7" rx="1"/><path d="M17 16l4-2v6l-4-2z"/></svg>
+        <h3>Video &amp; Social Media</h3>
+        <p>CapCut, DaVinci Resolve</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ---------- SCROLL TO TOP ---------- */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: rgba(245, 216, 218, 0.55);
-  backdrop-filter: blur(3px);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dark);
-  font-size: 22px;
-  text-decoration: none;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.scroll-top-btn.visible { opacity: 0.85; pointer-events: auto; }
+<section class="contact-bar" id="contact">
+  <a class="contact-col" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#97;&#110;&#110;&#97;&#104;&#95;&#109;&#97;&#114;&#97;&#104;&#114;&#101;&#110;&#115;&#64;&#103;&#109;&#120;&#46;&#100;&#101;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>
+    <span>E-Mail</span>
+  </a>
+  <a class="contact-col" href="https://www.instagram.com/hannah_marahrens/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r="0.6" fill="var(--ink)" stroke="none"/></svg>
+    <span>Instagram</span>
+  </a>
+  <a class="contact-col" href="https://www.linkedin.com/in/hannah-marahrens-787b59432/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7.3" r="0.9" fill="var(--ink)" stroke="none"/><path d="M11 16.5v-4c0-1.2 1-2 2.3-2 1.3 0 2.2.8 2.2 2v4"/></svg>
+    <span>Linkedin</span>
+  </a>
+  <a class="contact-col" href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#119;&#97;&#46;&#109;&#101;&#47;&#52;&#57;&#49;&#53;&#55;&#51;&#50;&#48;&#52;&#55;&#52;&#54;&#52;" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.8-1.2A9 9 0 1 0 12 3z"/><g transform="translate(7.3,6.3) scale(0.46)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="var(--ink)" stroke="none"/></g></svg>
+    <span>WhatsApp</span>
+  </a>
+</section>
 
-/* ---------- MODALS ---------- */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-.modal.active { display: flex; }
-.modal-content {
-  background: #ffffff;
-  padding: 2.6rem;
-  max-width: 640px;
-  width: 100%;
-  max-height: 82vh;
-  overflow-y: auto;
-  position: relative;
-}
-.modal-content h2 { font-size: 1.4rem; margin-bottom: 1rem; }
-.modal-content h3 { font-size: 1.05rem; margin: 1.3rem 0 0.5rem; font-family: -apple-system, Arial, sans-serif; font-weight: 700; }
-.modal-content p { color: #444; font-size: 0.92rem; margin: 0 0 0.9rem; }
-.modal-content .placeholder { color: #b5623f; }
-.modal-close {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.4rem;
-  font-size: 1.4rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--ink);
-}
+<footer>
+  <div class="wrap">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/hannah_marahrens/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="#ffffff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="#ffffff" stroke-width="1.8"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/hannah-marahrens-787b59432/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2" fill="none" stroke="#ffffff" stroke-width="1.8"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5" stroke="#ffffff" stroke-width="1.8"/><circle cx="7.5" cy="7.3" r="0.9" fill="#ffffff"/><path d="M11 16.5v-4c0-1.2 1-2 2.3-2 1.3 0 2.2.8 2.2 2v4" fill="none" stroke="#ffffff" stroke-width="1.8"/></svg>
+      </a>
+      <a href="&#104;&#116;&#116;&#112;&#115;&#58;&#47;&#47;&#119;&#97;&#46;&#109;&#101;&#47;&#52;&#57;&#49;&#53;&#55;&#51;&#50;&#48;&#52;&#55;&#52;&#54;&#52;" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.8-1.2A9 9 0 1 0 12 3z" fill="none" stroke="#ffffff" stroke-width="1.6"/><g transform="translate(7.3,6.3) scale(0.46)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" fill="#ffffff" stroke="none"/></g></svg>
+      </a>
+    </div>
+    <div class="footer-legal">
+      <button onclick="openModal('impressumModal')">Impressum</button>
+      <button onclick="openModal('datenschutzModal')">Datenschutz</button>
+    </div>
+    <p class="footer-copy">© 2026 Hannah Marahrens</p>
+  </div>
+</footer>
 
-/* ---------- PROJEKT-UNTERSEITEN ---------- */
-.project-intro { padding: 4rem 0 2.5rem; max-width: 800px; margin: 0 auto; }
-.project-intro .back-link { display: inline-block; margin-bottom: 1.4rem; font-size: 0.9rem; color: var(--muted); }
-.project-intro .back-link:hover { color: var(--ink); }
-.project-intro h1 { font-size: 2.3rem; margin-bottom: 1.1rem; }
-.project-intro p { font-size: 1.05rem; color: #444; margin: 0 0 0.6rem; }
-.project-gallery { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
-.project-gallery img { width: 100%; object-fit: cover; }
-.pg-row { display: grid; gap: 0.9rem; margin-bottom: 0.9rem; }
-.pg-row.cols-1 { grid-template-columns: 1fr; }
-.pg-row.cols-2 { grid-template-columns: 1fr 1fr; }
-.pg-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
-.pg-dark { background: var(--tile-vogelball); padding: 2rem; }
-.pg-dark img { height: 100%; }
-.pg-placeholder { background: #eee; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; text-align: center; padding: 1rem; }
+<div id="impressumModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('impressumModal')">&times;</button>
+    <h2>Impressum</h2>
+    <p><strong>Angaben gemäß § 5 DDG</strong></p>
+    <p class="placeholder">[Vollständiger Vor- und Nachname]<br>[Straße und Hausnummer]<br>[Postleitzahl und Ort]</p>
+    <h3>Kontakt</h3>
+    <p class="placeholder">E-Mail: [deine-email@beispiel.de]<br>Telefon (optional): [Telefonnummer]</p>
+    <h3>Umsatzsteuer</h3>
+    <p class="placeholder">[Falls zutreffend: Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE XXXXXXXXX] – oder: Gemäß § 19 UStG wird keine Umsatzsteuer ausgewiesen (Kleinunternehmerregelung).</p>
+    <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+    <p class="placeholder">[Vollständiger Vor- und Nachname]<br>[Straße und Hausnummer]<br>[Postleitzahl und Ort]</p>
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieterin bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Gemäß §§ 8 bis 10 DDG bin ich als Diensteanbieterin jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+    <h3>Haftung für Links</h3>
+    <p>Dieses Angebot enthält Links zu externen Webseiten Dritter (z. B. Instagram, LinkedIn), auf deren Inhalte ich keinen Einfluss habe. Für diese fremden Inhalte trägt stets der jeweilige Anbieter die Verantwortung.</p>
+    <h3>Urheberrecht</h3>
+    <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten (Texte, Fotos, Designs) unterliegen dem deutschen Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf meiner schriftlichen Zustimmung.</p>
+  </div>
+</div>
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 760px) {
-  header.hero { padding: 3rem 0 2rem; }
-  nav.main-nav { gap: 1.6rem; }
-  nav.main-nav a { font-size: 1rem; }
-  .about-split { grid-template-columns: 1fr; gap: 1.5rem; padding-bottom: 2rem; }
-  .about-text { padding-left: 0; }
-  .about-photo { width: 220px; margin: 0 auto; }
-  .about-section { padding: 2.5rem 0 1rem; }
-  .badges { gap: 1.2rem; padding: 2.5rem 0; }
-  .badge { width: 145px; height: 145px; }
-  .contact-bar { grid-template-columns: 1fr 1fr; }
-  .contact-col { border-bottom: 1px solid rgba(0,0,0,0.15); }
-  .contact-col:nth-child(odd) { border-right: 1px solid rgba(0,0,0,0.15); }
-  .contact-col:nth-child(even) { border-right: none; }
-  .tile-vogelball { padding: 1rem; gap: 0.4rem; }
-  .project-gallery { padding: 0 1.3rem 3rem; }
-  .pg-row.cols-2, .pg-row.cols-3 { grid-template-columns: 1fr; }
-}
-@media (max-width: 460px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .contact-bar { grid-template-columns: 1fr; }
-  .contact-col { border-right: none !important; }
-}
+<div id="datenschutzModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal('datenschutzModal')">&times;</button>
+    <h2>Datenschutzerklärung</h2>
+    <h3>1. Datenschutz auf einen Blick</h3>
+    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du diese Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst.</p>
+    <h3>2. Verantwortliche Stelle</h3>
+    <p class="placeholder">[Vollständiger Vor- und Nachname]<br>[Straße und Hausnummer]<br>[Postleitzahl und Ort]<br>E-Mail: [deine-email@beispiel.de]</p>
+    <h3>3. Hosting</h3>
+    <p>Diese Website wird extern gehostet über den Dienst <strong>Wix.com Ltd.</strong> (40 Namal Tel Aviv St., Tel Aviv, Israel). Beim Besuch dieser Website erfasst Wix verschiedene Logfiles inklusive IP-Adresse. Die Verwendung erfolgt im Interesse einer sicheren, schnellen und effizienten Bereitstellung des Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://de.wix.com/about/privacy" target="_blank" rel="noopener" style="text-decoration:underline;">wix.com/about/privacy</a>.</p>
+    <h3>4. Allgemeine Datenerfassung auf der Website</h3>
+    <p><strong>E-Mail-Kontakt:</strong> Wenn du per E-Mail Kontakt aufnimmst, wird deine Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung gespeichert und verarbeitet (Art. 6 Abs. 1 lit. f DSGVO). Diese Daten werden nicht ohne deine Einwilligung weitergegeben.</p>
+    <h3>5. Plugins und Social Media</h3>
+    <p>Auf dieser Website sind keine aktiven Social-Media-Plugins eingebunden, die automatisch Daten übertragen. Es handelt sich lediglich um einfache externe Links zu Instagram, LinkedIn und WhatsApp. Beim Anklicken verlässt du diese Website, und es gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+    <h3>6. Deine Rechte als betroffene Person</h3>
+    <p>Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung, sowie ein Recht auf Berichtigung oder Löschung dieser Daten. Wende dich dazu an die oben im Impressum angegebene E-Mail-Adresse.</p>
+  </div>
+</div>
+
+<a href="#start" class="scroll-top-btn" id="scrollTopBtn">&uarr;</a>
+
+<script>
+  function openModal(id) { document.getElementById(id).classList.add('active'); }
+  function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+  window.onclick = function(e) {
+    if (e.target.classList.contains('modal')) e.target.classList.remove('active');
+  };
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) scrollTopBtn.classList.add('visible');
+    else scrollTopBtn.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
